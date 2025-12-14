@@ -2,5 +2,6 @@
 {
     public interface IFootballApiService
     {
+        Task<string> GetFootballDataAsync(string endpoint);
     }
 }
