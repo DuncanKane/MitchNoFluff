@@ -1,5 +1,13 @@
 ﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Home>
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
+        
+    var apiContent = Model.Api.Content as BlockFootballApi;    
 }
 <h2>@Model.Title</h2>
+
+@if (!string.IsNullOrEmpty(apiContent.ApiUrl))
+{
+    <h3>@apiContent.Titile</h3>
+    <p>@apiContent.ApiUrl</p>
+}
