@@ -1,13 +1,14 @@
-﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Home>
+﻿@using Umbraco.Cms.Core.Models.Blocks
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Home>
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
-        
-    var apiContent = Model.Api.Content as BlockFootballApi;    
-}
-<h2>@Model.Title</h2>
 
-@if (!string.IsNullOrEmpty(apiContent.ApiUrl))
+    var apiBlockItem = Model.Api; // BlockListItem
+}
+
+<h1>@Model.Title</h1>
+
+@if (apiBlockItem != null)
 {
-    <h3>@apiContent.Titile</h3>
-    <p>@apiContent.ApiUrl</p>
+    @Html.GetBlockListHtml(new BlockListModel(new[] { apiBlockItem }))
 }

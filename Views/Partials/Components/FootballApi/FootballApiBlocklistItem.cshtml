@@ -1,9 +1,0 @@
-﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<BlockFootballApi>
-@using Umbraco.Cms.Web.Common.PublishedModels
-@if (string.IsNullOrEmpty(Model.ApiUrl))
-{
-    return;    
-}
-
-<h3>@Model.Titile</h3>
-<p>API: @Model.ApiUrl</p>

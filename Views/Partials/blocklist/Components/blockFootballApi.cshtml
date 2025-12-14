@@ -1,0 +1,17 @@
+﻿@using Umbraco.Cms.Core.Models.Blocks
+@inherits UmbracoViewPage<BlockListItem>
+@{
+    var content = Model.Content as BlockFootballApi;
+
+    if (content == null || string.IsNullOrWhiteSpace(content.ApiUrl))
+    {
+        return;
+    }
+}
+
+<h3>@content.Title</h3>
+
+@await Component.InvokeAsync(
+    "FootballApi", 
+    new { apiUrl = content.ApiUrl }
+)

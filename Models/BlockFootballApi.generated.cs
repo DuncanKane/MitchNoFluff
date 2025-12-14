@@ -58,11 +58,11 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual string ApiUrl => this.Value<string>(_publishedValueFallback, "apiUrl");
 
 		///<summary>
-		/// Titile
+		/// Title
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.0.2+497c31e")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("titile")]
-		public virtual string Titile => this.Value<string>(_publishedValueFallback, "titile");
+		[ImplementPropertyType("title")]
+		public virtual string Title => this.Value<string>(_publishedValueFallback, "title");
 	}
 }

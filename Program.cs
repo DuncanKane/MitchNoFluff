@@ -1,4 +1,8 @@
+using MitchNoFluff.Services;
+
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddScoped<IFootballApiService, FootballApiService>();
 
 builder.CreateUmbracoBuilder()
     .AddBackOffice()
@@ -22,5 +26,6 @@ app.UseUmbraco()
         u.UseBackOfficeEndpoints();
         u.UseWebsiteEndpoints();
     });
+
 
 await app.RunAsync();
